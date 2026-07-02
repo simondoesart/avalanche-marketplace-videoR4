@@ -1,0 +1,10 @@
+{
+  "name": "avalanche-video",
+  "version": "1.0.0",
+  "description": "On-brand Avalanche video generation via the Higgsfield MCP. Guided /make-video intake, brand visual style, six video-type definitions, prompt building blocks, scene templates, and an element library.",
+  "author": {
+    "name": "Ava Labs",
+    "email": "avalabscreative@gmail.com"
+  },
+  "keywords": ["avalanche", "video", "higgsfield", "brand", "motion-graphics"]
+}

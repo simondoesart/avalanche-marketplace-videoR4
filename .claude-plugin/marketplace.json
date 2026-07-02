@@ -1,0 +1,16 @@
+{
+  "name": "avalanche-marketplace-videoR4",
+  "owner": { "name": "Ava Labs", "email": "avalabscreative@gmail.com" },
+  "metadata": {
+    "description": "Avalanche brand video tooling for Claude — on-brand generation via Higgsfield.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "avalanche-video",
+      "source": "./plugins/avalanche-video",
+      "description": "On-brand Avalanche video generation: guided make-video intake, brand visual style, six video-type definitions, prompt building blocks, scene templates, element library, and the Higgsfield MCP.",
+      "version": "1.0.0"
+    }
+  ]
+}
