@@ -1,0 +1,10 @@
+{
+  "name": "avalanche-video",
+  "version": "2.0.0",
+  "description": "All-in-one Avalanche video pipeline via the Higgsfield MCP: strategy + hook, heavy script workshopping, @element continuity bible, shotlist, canonical human-reviewable prompts, and guarded generation.",
+  "author": {
+    "name": "Ava Labs",
+    "email": "avalabscreative@gmail.com"
+  },
+  "keywords": ["avalanche", "video", "higgsfield", "brand", "motion-graphics"]
+}
