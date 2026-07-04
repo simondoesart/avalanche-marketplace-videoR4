@@ -1,39 +1,47 @@
-# Avalanche Video — Claude plugin
+# Avalanche Video — Claude plugin (v2)
 
-Everything a video editor needs to generate on-brand Avalanche videos with Claude + Higgsfield, in one installable bundle.
+All-in-one Avalanche video tool: define the strategy, workshop the script, plan continuity with @elements, build the shotlist, and generate via the Higgsfield MCP — from a minimal brief.
 
 ## What's inside
 ```
 avalanche-video/
-├── .claude-plugin/plugin.json   # plugin manifest
-├── .mcp.json                    # declares the Higgsfield MCP server
-├── skills/make-video/SKILL.md   # the /make-video pipeline
-├── commands/make-video.md       # command playbook (same flow)
-├── brand/brand-visual-style.md  # the look & motion rules
+├── .claude-plugin/plugin.json      # plugin manifest
+├── .mcp.json                       # declares the Higgsfield MCP server
+├── skills/make-video/SKILL.md      # the v2 phased pipeline
+├── brand/brand-visual-style.md     # house look: 35mm film / diegetic audio / de-creep
 ├── library/
-│   ├── video-types.md           # the 6 video types + reference/model routing
-│   ├── prompt-building-blocks.md
-│   ├── scene-shot-templates.md  # T1–T7 ready-to-fire templates
-│   └── reference-assets.md      # element registry (re-registered per account)
-├── briefs/_TEMPLATE.md          # editable per-video brief sheet
-└── assets/                      # bundled brand assets (add avalanche-logo.png)
+│   ├── video-types.md              # 6 style registers + model routing
+│   ├── prompt-format.md            # canonical human-reviewable prompt layout
+│   ├── global-negatives.md         # baked-in tiered AVOID lists
+│   ├── prompt-building-blocks.md   # shot phrases + duration heuristic + routing
+│   ├── scene-shot-templates.md     # saved winning templates
+│   └── reference-assets.md         # element registry (re-registered per account)
+├── briefs/
+│   ├── _TEMPLATE.md                # per-video brief sheet (phased)
+│   └── _CONTINUITY_TEMPLATE.md     # continuity bible: @elements, wardrobe locks, usage map
+└── assets/                         # bundled brand assets (avalanche-logo.png)
 ```
 
-## Install (direct handoff)
-1. Unzip this folder.
-2. Add it as a plugin in Claude (Cowork/Claude Code): **Settings › Capabilities › add plugin**, and point to this folder (or a marketplace that lists it).
-3. Connect the **Higgsfield** MCP when prompted — each editor authenticates with **their own** Higgsfield account (their credits, their generations). The server is already declared in `.mcp.json`.
+## The pipeline (what "/make-video" does)
 
-## First run
-- The skill runs a one-time **setup**: it uploads `assets/avalanche-logo.png` into the editor's Higgsfield workspace, registers it as a reference element, and records the new ID in `library/reference-assets.md`. (Element IDs are per-account, so this can't be pre-baked.)
-- ⚠️ **Add the logo file first:** drop the official transparent horizontal KO logo into `assets/avalanche-logo.png` before zipping/handing off. (It couldn't be auto-bundled from the source account.)
+1. **Intake** — brief enters at any stage: one-line idea, existing strategy/PR hook, existing script, or existing shotlist/style refs.
+2. **Strategy & hook** — workshopped until locked (skipped if provided).
+3. **Script workshop** — the heavy phase: versioned drafts, line-level rounds, locked before anything visual.
+4. **Continuity bible + @elements** — every character/prop/location gets an @name matching a Higgsfield reference element (dedupe check, upload widget, usage map, locked wardrobe phrasing).
+5. **Shotlist** — beats → numbered shots, ~2.5–3s/shot, packed into generations; model + aspect explicitly confirmed.
+6. **Prompts** — one canonical, human-readable block per generation; continuity-linted before review.
+7. **Generate** — prompt diff → cost preflight → explicit OK → one submit (stock presets declined by default).
+8. **Review & wrap** — checked against bible + brand; winners saved as templates.
+
+## Install (per editor)
+1. Add this folder (or its marketplace) as a plugin: **Settings › Capabilities › add plugin**.
+2. Connect the **Higgsfield** MCP when prompted — each editor authenticates with **their own** Higgsfield account (their credits, their generations).
+3. First run registers `assets/avalanche-logo.png` as a reference element in that account (IDs are per-account).
 
 ## Use
-Ask Claude: **"make a branded video"** (or run `/make-video` once installed as a real command). It runs a guided intake — story angle, brief/script, aspect ratio, video type, tool, model, duration, elements, reference uploads — every field editable, then generates, reviews against brand, and saves winners.
-
-## Updating
-Edit any file in this folder and re-hand-off, or edit the installed skill in Settings › Capabilities. Nothing is locked.
+Say **"/make-video"** or "make a branded video" — or just paste a brief/script and say what you're making.
 
 ## Notes
-- **Google Flow** has no MCP connector — it's a manual handoff (the skill outputs a Flow-ready prompt to paste in Flow; drop the result into `renders/`).
-- Renders live in the Higgsfield account; save them from the Higgsfield result widget.
+- **Google Flow** has no MCP — the skill outputs a paste-ready prompt instead; drop results into `renders/`.
+- Renders live in the editor's Higgsfield account; save from the result widget.
+- Editing: change any file here and re-hand-off, or edit the installed skill in Settings › Capabilities.

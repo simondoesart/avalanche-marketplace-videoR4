@@ -1,6 +1,8 @@
 # Element Library — Scene / Shot Templates
 
-Full, ready-to-fire prompt templates for recurring content types. Copy a template, swap the `{{PLACEHOLDERS}}`, and send to `generate_video` / `generate_image`. All are pre-tuned to `brand/brand-visual-style.md`.
+Saved winning prompts for recurring content types. Copy a template, swap the `{{PLACEHOLDERS}}`, and rebuild into the canonical layout (`library/prompt-format.md`) before submitting.
+
+> **Note:** T1–T7 below are **legacy graphic-register** templates (deep space / red accent / engineered CGI) — use only for video types 3, 4, 6. Narrative/filmed work starts from the script pipeline, not a template; append narrative winners here as they land.
 
 Placeholders: `{{SUBJECT}}`, `{{PRODUCT}}`, `{{TAGLINE}}`, `{{ELEMENT_ID}}` (reference element).
 

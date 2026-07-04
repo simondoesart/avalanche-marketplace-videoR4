@@ -1,6 +1,18 @@
-# Video Types — Definitions & Reference Routing
+# Video Types — Style Registers & Reference Routing
 
-The `/make-video` skill uses this file to know, for each video type: the look, which references to pull, which Higgsfield model to route to, and which building blocks to lean on. All types still obey `brand/brand-visual-style.md`.
+The `/make-video` skill uses this file to know, for each video type: the look, which references to pull, which Higgsfield model to route to, and which building blocks to lean on. All types obey `brand/brand-visual-style.md` — whose **house default is now the 35mm film documentary look** (§2 of that file).
+
+**Style-register mapping** (editor language → type):
+
+| Editor says | Type |
+|-------------|------|
+| "documentary style" / narrative / human story | 1. Human-centric (house default look) |
+| "commercial advertisement style" / cinematic ad / VO b-roll | 2. B-roll (same film base, composed cinematically) |
+| "motion graphic style" / keyable asset / logo sting | 4 or 6 (legacy graphic register — opt-in) |
+| abstract / tech texture | 3. Abstract (legacy graphic register — opt-in) |
+| alpine / snow / nature | 5. Snow & nature |
+
+When the editor hasn't chosen, recommend one with a one-line rationale based on the hook — default toward 1 or 2 for narrative briefs. Types 3, 4, and 6 use the **legacy graphic register** (deep space, red accent, engineered CGI motion) — never mix its vocabulary into filmed types 1, 2, 5.
 
 > Refine freely. Drop visual references into `assets/<type>/` and register the best as reference elements (see `reference-assets.md`). The more references a type has, the more consistent its output.
 

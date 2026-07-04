@@ -39,10 +39,13 @@ Files to register live in `/assets/` in this folder (drop logos, palettes, produ
 Feed these hexes into `generate_image` prompts to keep frames on-palette:
 - Avalanche Red `#E84142` · Near-black `#0A0A0B` · Off-white `#F5F6F7` · Graphite `#2A2E33`
 
-## Suggested first uploads
-1. **Avalanche logo mark** (transparent PNG) → the hero of T1.
-2. **Brand background plate** (deep-space dark) → reusable environment.
-3. **Primary product render** (if applicable) → T2 glamour orbit.
-4. **2–3 on-brand reference stills** (looks we want to match) → style anchors.
+## Naming convention (matches the continuity bible)
 
-Once these exist, most videos become: pick a template → drop in the element → generate.
+Element names double as the `@names` used in scripts and shotlists — the backend rewrites `<<<element_id>>>` to `@element_name`. So: lowercase, hyphenated, unique, human-readable (`@woman`, `@kiosk-scanner`). **Re-uploading creates a NEW id** — check for same-name duplicates with `show_reference_elements` before creating, prefer the newest or ask.
+
+## Suggested first uploads
+1. **Avalanche logo mark** (transparent PNG) → brand layer shots.
+2. **2–3 film-look reference stills** (35mm warmth, documentary frames we want to match) → style anchors.
+3. **Recurring characters/locations** for any ongoing campaign → identity continuity.
+
+Per project, characters/props/locations are registered in Phase 4 of `/make-video` and logged both here and in the project's continuity bible.
