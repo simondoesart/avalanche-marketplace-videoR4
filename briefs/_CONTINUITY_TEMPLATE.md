@@ -10,9 +10,11 @@ _Companion to `briefs/{{slug}}.md` · Created in Phase 4, BEFORE any shotlist or
 
 Naming convention: lowercase, hyphenated, unique, human-readable (`@woman`, `@kiosk-scanner`, `@london-taxi`). The @name **must equal the Higgsfield element name** — the backend rewrites `<<<element_id>>>` to `@element_name`, so matching names keep review and submit views identical. One @name = one element_id, forever. Re-uploading creates a NEW id — never silently swap; update this table deliberately.
 
+**Default: every @element is created NEW for this project.** Reuse an existing library element only when the editor explicitly specifies it — mark those `reused (specified)` below.
+
 | @name | Type | element_id | Source image | Status |
 |-------|------|-----------|--------------|--------|
-| @{{name}} | character / prop / environment | `{{uuid}}` | {{uploaded / generated / existing}} | confirmed |
+| @{{name}} | character / prop / environment | `{{uuid}}` | {{uploaded / generated / reused (specified)}} | confirmed |
 
 ## 2. Characters — locked descriptions
 
